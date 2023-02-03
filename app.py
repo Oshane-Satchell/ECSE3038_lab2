@@ -36,6 +36,9 @@ async def update_todo_by_id(request: Request, id:int):
             return z,200 
     return None,404
 
-
+@app.delete("/todos/{id}")
+async def delete_todo_by_id(request: Request, id:int):
+    fake_database.pop(id)
+    return None, 404
 
 
